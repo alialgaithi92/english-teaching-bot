@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add New Question</h2>
+<form method="POST" action="{{ url_for('add_question') }}">
+    <label for="question_type">Question Type:</label>
+    <select id="question_type" name="question_type" required>
+        <option value="multiple_choice">Multiple Choice</option>
+        <option value="true_false">True/False</option>
+        <option value="fill_in_the_blank">Fill in the Blank</option>
+    </select>
+
+    <label for="question_text">Question Text:</label>
+    <textarea id="question_text" name="question_text" required></textarea>
+
+    <label for="options">Options (comma-separated):</label>
+    <input type="text" id="options" name="options">
+
+    <label for="correct_answer">Correct Answer:</label>
+    <input type="text" id="correct_answer" name="correct_answer" required>
+
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback"></textarea>
+
+    <button type="submit">Add Question</button>
+</form>
+{% endblock %}
